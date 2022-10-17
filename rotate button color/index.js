@@ -7,9 +7,9 @@ const antiClock = document.getElementById("Anticlock-rotate");
 // ------------------------------------------------
 // Stores if a button of particular color is clicked
 const buttonsState = {
-  red: false,
-  green: false,
-  yellow: false,
+  red: true,
+  green: true,
+  yellow: true,
 };
 let buttonsOrder = ["red", "green", "yellow"];
 
