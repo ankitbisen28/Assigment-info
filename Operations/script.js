@@ -1,42 +1,52 @@
-// let valueOne = parseInt(document.getElementById("input-1"));
-// let valueTwo = parseInt(document.getElementById("input-2"));
-
 const validate = (valueOne, valueTwo) => {
-  if(isNaN(valueOne) || isNaN(valueTwo)){
+  if (isNaN(valueOne) || isNaN(valueTwo)) {
     alert("Enter Valid Number");
-  }
-  else if(valueOne === '-' || valueTwo === '-' || valueOne === '+' || valueTwo === '+' || valueOne === '*' || valueTwo === '*' || valueOne === '/' || valueTwo === '/' ){
+  } else if (
+    valueOne === "" ||
+    valueTwo === "" ||
+    !Number(valueOne) ||
+    !Number(valueTwo)
+  ) {
     alert("Enter Valid Number");
-  }
-  else{
+  } else {
     console.log("Every this is working Fine");
   }
-}
+};
 
 const Add = () => {
-  let valueOne = parseInt(document.getElementById("input-1").value);
-  let valueTwo = parseInt(document.getElementById("input-2").value);
-  document.getElementById("result").innerHTML = valueOne + valueTwo;
+  let valueOne = document.getElementById("input-1").value;
+  let valueTwo = document.getElementById("input-2").value;
   validate(valueOne, valueTwo);
+  let output = parseFloat(valueOne) + parseFloat(valueTwo);
+  document.getElementById("result").innerHTML =
+    !parseFloat(valueOne) && !parseFloat(valueTwo) ? output : output.toFixed(2);
 };
 
 const Sub = () => {
-  let valueOne = parseInt(document.getElementById("input-1").value);
-  let valueTwo = parseInt(document.getElementById("input-2").value);
-  document.getElementById("result").innerHTML = valueOne - valueTwo;
+  let valueOne = document.getElementById("input-1").value;
+  let valueTwo = document.getElementById("input-2").value;
   validate(valueOne, valueTwo);
+  let output = parseFloat(valueOne) - parseFloat(valueTwo);
+  document.getElementById("result").innerHTML =
+    !parseFloat(valueOne) && !parseFloat(valueTwo) ? output : output.toFixed(2);
 };
 
 const Div = () => {
-  let valueOne = parseInt(document.getElementById("input-1").value);
-  let valueTwo = parseInt(document.getElementById("input-2").value);
-  document.getElementById("result").innerHTML = valueOne / valueTwo;
+  let valueOne = document.getElementById("input-1").value;
+  let valueTwo = document.getElementById("input-2").value;
   validate(valueOne, valueTwo);
+  let output = parseFloat(valueOne) / parseFloat(valueTwo);
+  document.getElementById("result").innerHTML =
+    !parseFloat(valueOne) && !parseFloat(valueTwo) ? output : output.toFixed(2);
 };
 
 const Mul = () => {
-  let valueOne = parseInt(document.getElementById("input-1").value);
-  let valueTwo = parseInt(document.getElementById("input-2").value);
-  document.getElementById("result").innerHTML = valueOne * valueTwo;
+  let valueOne = document.getElementById("input-1").value;
+  let valueTwo = document.getElementById("input-2").value;
   validate(valueOne, valueTwo);
+  let output = parseFloat(valueOne) * parseFloat(valueTwo);
+  document.getElementById("result").innerHTML =
+    !parseFloat(valueOne) && !parseFloat(valueTwo) ? output : output.toFixed(2);
 };
+
+// Output will be float value it has done.

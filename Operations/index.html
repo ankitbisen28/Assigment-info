@@ -10,13 +10,13 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <script src="script.js"></script>p
+    <script src="script.js" defer></script>p
     <title>Operation</title>
 </head>
 <body>
     <h3 class="text-center my-2">Calculation</h3>
     <div class="container d-flex justify-content-center my-3">
-        <input class="mx-3" type="number" id="input-1">
+        <input class="mx-3" type="number" min="0" id="input-1" oninvalid="window.alert('Please enter Numbers Only')">
         <input type="number" id="input-2">
     </div>
     <div class="container d-flex justify-content-center my-3">

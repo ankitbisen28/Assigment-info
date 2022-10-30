@@ -1,17 +1,11 @@
-const buttonsContainer = document.querySelector(".buttons-container");
-const buttons = buttonsContainer.querySelectorAll(".btn");
+const redBtn = document.getElementById("red");
+const greenBtn = document.getElementById("green");
+const yellowBtn = document.getElementById("yellow");
 
 const clockWise = document.getElementById("clock-rotate");
 const antiClock = document.getElementById("Anticlock-rotate");
 
-// ------------------------------------------------
-// Stores if a button of particular color is clicked
-const buttonsState = {
-  red: true,
-  green: true,
-  yellow: true,
-};
-let buttonsOrder = ["red", "green", "yellow"];
+let colors = ["red", "green", "yellow"];
 
 const rotate = (arr, direction) => {
   if (direction === "ltr") {
@@ -27,35 +21,18 @@ const rotate = (arr, direction) => {
   return arr;
 };
 
-const buttonClickHandler = function(button) {
-  const buttonType = button.dataset.color;
-  button.classList.add(buttonType);
-  buttonsState[buttonType] = true;
-};
-
-const setButtonsContainerHtml = (buttonsArr, state) => {
-  let html = "";
-  buttonsArr.forEach((button) => {
-    html += `<button class="btn btn-secondary mx-3 ${state[button] ? `${button}` : ''}" id="${button}" data-color="${button}" onclick="buttonClickHandler(this)">
-      ${button}
-    </button>`;
-  });
-
-  buttonsContainer.innerHTML = html;
-};
-
-buttons.forEach(button => button.addEventListener("click", function() {
-  buttonClickHandler(this)
-}));
-
 clockWise.addEventListener("click", () => {
-  const rotatedArr = rotate(buttonsOrder, "ltr");
-  buttonsOrder = rotatedArr;
-  setButtonsContainerHtml(rotatedArr, buttonsState);
+  let rotatedArr = rotate(colors, "ltr");
+  colors = rotatedArr;
+  redBtn.style.backgroundColor = colors[0];
+  greenBtn.style.backgroundColor = colors[1];
+  yellowBtn.style.backgroundColor = colors[2];
 });
 
 antiClock.addEventListener("click", () => {
-  const rotatedArr = rotate(buttonsOrder, "rtl");
-  buttonsOrder = rotatedArr;
-  setButtonsContainerHtml(rotatedArr, buttonsState);
+  let rotatedArr = rotate(colors, "rtl");
+  colors = rotatedArr;
+  redBtn.style.backgroundColor = colors[0];
+  greenBtn.style.backgroundColor = colors[1];
+  yellowBtn.style.backgroundColor = colors[2];
 });
