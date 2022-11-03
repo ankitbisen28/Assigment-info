@@ -51,9 +51,6 @@ SyncAndAdd.addEventListener("click", () => {
     let result3 = (BtnsValues[2] += 1);
     btn3.innerHTML = result3;
     console.log(result1);
-    btn1clicked = true;
-    btn2clicked = true;
-    btn3clicked = true;
   } else if (!btn1clicked && !btn2clicked) {
     let result1 = (BtnsValues[0] += 1);
     btn1.innerHTML = result1;
@@ -114,9 +111,5 @@ SyncAndAdd.addEventListener("click", () => {
       btn3.innerHTML = BtnsValues[2];
     }
     console.log("all btns clicked");
-    Intial = null;
   }
-  btn1clicked = false;
-  btn2clicked = false;
-  btn3clicked = false;
 });
